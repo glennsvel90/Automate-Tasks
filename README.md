@@ -3,7 +3,9 @@
 Helps you to autocorrect many words and automate helpful tasks, such as voice record by keyboard press, utilizing other combination of apps.
 
 -Uses the AutoHotKey open-source software for Windows to simplify browser keyboard shortcuts' speed and skip buttons.
+
 -Uses Otter Web App for voice recording
+
 -Uses Everything App for windows file search
 
 ## Getting Started
