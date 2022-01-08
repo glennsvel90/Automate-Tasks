@@ -14,7 +14,7 @@ Attached to the repository is the AutoHotKey mother program that should be insta
 
 
 
-## The shortcut keys when watching educational content :
+## The shortcut keys:
 
 While watching educational videos online and/or acquiring knowledge from Audible self-development books: 
 
