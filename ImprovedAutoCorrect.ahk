@@ -60,3 +60,56 @@ return
 
 
 #IfWinActive
+
+
+
+#IfWinActive, 	ahk_exe PDFXEdit.exe 
+
+~g & h:: send ^{right}
+~h & g:: send ^{left}
+
+
+
+return
+#ifwinactive
+
+
+#IfWinActive ahk_exe vlc.exe
+
+d::^h
+^!s::^!s
+:R*?:ddd::ddd
+~$f::f
+~$j::j
+^!r::^!r
+^+x::^+x
+:r0:````````:::r0:````````
+^!w::^!w
+
+^!s:: 
+SoundBeep, 950, 500
+MsgBox, , Alert!, Reload, 0.5
+reload 
+
+return
+
+
+#IfWinActive
+
+
+:R*?:ddd::
+FormatTime, CurrentDateTime,, MMM dd-ddd
+SendInput %CurrentDateTime% .
+return
+
+
+:R*?:aaa::ANSWERS
+
+
+
+:R*?:ssss::
+(
+Sincerely,
+First_Name Last_Name
+)
+
