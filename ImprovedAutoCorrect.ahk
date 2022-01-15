@@ -113,3 +113,34 @@ Sincerely,
 First_Name Last_Name
 )
 
+
+~$+^!p::
+if WheelLeft_pfesses > 0
+{
+	WheelLeft_pfesses += 1
+	SetTimer, KeyWheelLeft, 500
+	return
+}
+WheelLeft_pfesses = 1
+SetTimer, KeyWheelLeft, 500
+return
+
+KeyWheelLeft:
+SetTimer, KeyWheelLeft, off
+if WheelLeft_pfesses = 1
+{
+	send !{tab}
+}
+else
+if WheelLeft_pfesses = 2
+{
+	send {alt down}
+	send {tab}
+	send {tab}
+	send {alt up}
+	send {enter}
+}
+
+WheelLeft_pfesses = 0
+return
+
