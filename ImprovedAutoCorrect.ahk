@@ -144,3 +144,42 @@ if WheelLeft_pfesses = 2
 WheelLeft_pfesses = 0
 return
 
+
+
+
+#ifwinactive, ahk_exe ONENOTE.EXE
+;onenote new line
+~$j::
+if j_pfesses > 0
+{
+	j_pfesses += 1
+	SetTimer, Keyj, 300
+	return
+}
+j_pfesses = 1
+SetTimer, Keyj, 300
+return
+
+Keyj:
+SetTimer, Keyj, off
+if j_pfesses = 1
+{
+	
+}
+else
+if j_pfesses = 2
+{
+	send j{Backspace}
+}
+else
+if j_pfesses > 2 
+{
+	
+	send {Backspace}{Backspace}{Backspace}
+	send ^z
+	send ^z
+}
+j_pfesses = 0
+return
+#ifwinactive
+
