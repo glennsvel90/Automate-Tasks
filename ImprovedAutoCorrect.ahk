@@ -183,3 +183,36 @@ j_pfesses = 0
 return
 #ifwinactive
 
+#ifwinactive, ahk_exe WINWORD.EXE
+;onenote new line
+~$j::
+if j_pfesse > 0
+{
+	j_pfesse += 1
+	SetTimer, Keyjj, 300
+	return
+}
+j_pfesse = 1
+SetTimer, Keyjj, 300
+return
+
+Keyjj:
+SetTimer, Keyjj, off
+if j_pfesse = 1
+{
+	
+}
+else
+if j_pfesse = 2
+{
+	send j{Backspace}
+}
+else
+if j_pfesse > 2 
+{
+	
+	send {Backspace}{Backspace}{Backspace}
+}
+j_pfesse = 0
+return
+#ifwinactive
