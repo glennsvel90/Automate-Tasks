@@ -216,3 +216,39 @@ if j_pfesse > 2
 j_pfesse = 0
 return
 #ifwinactive
+
+
+
+^o:: DeleteCurrentLine()
+
+DeleteCurrentLine() {
+   SendInput {End}
+   SendInput +{Home}
+   If get_SelectedText() = "" {
+      ; On an empty line.
+      SendInput {Delete}
+   } Else {
+      SendInput ^+{Left}
+      SendInput {Delete}
+   }
+}
+
+get_SelectedText() {
+
+    ; See if selection can be captured without using the clipboard.
+    WinActive("A")
+    ControlGetFocus ctrl
+    ControlGet selectedText, Selected,, %ctrl%
+
+    ;If not, use the clipboard as a fallback.
+    If (selectedText = "") {
+        originalClipboard := ClipboardAll ; Store current clipboard.
+        Clipboard := ""
+        SendInput ^c
+        ClipWait .2
+        selectedText := ClipBoard
+        ClipBoard := originalClipboard
+    }
+
+    Return selectedText
+}
