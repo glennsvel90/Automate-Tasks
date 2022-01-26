@@ -252,3 +252,21 @@ get_SelectedText() {
 
     Return selectedText
 }
+
+
+^!r::
+	Suspend
+	if (A_IsSuspended)
+{	
+		SoundBeep, 200, 500
+		MsgBox, , ASuspended, OFF Auto Suspended, 0.5
+}
+	else
+{
+		SoundBeep, 950, 500
+		MsgBox, , Alert!, ON AutocorctActive! ON, 0.5
+}
+return
+
+Hotkey, IfWinActive, hk_exe PDFXEdit.exe 
+Hotstring("::ggg", Off)
