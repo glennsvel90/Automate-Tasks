@@ -270,3 +270,17 @@ return
 
 Hotkey, IfWinActive, hk_exe PDFXEdit.exe 
 Hotstring("::ggg", Off)
+
+
+
+^!q::
+	if (A_IsSuspended)
+{	
+		SoundBeep, 200, 500
+}
+	else
+{
+		Suspend
+		SoundBeep, 200, 500
+}
+return
